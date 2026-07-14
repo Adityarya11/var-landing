@@ -1,30 +1,37 @@
 import React from "react";
+import { ArrowUpRight } from "lucide-react";
 
 export default function AetherRTCCallout() {
     return (
         <section className="py-16 px-6 max-w-4xl mx-auto w-full">
-            <div className="bg-[#232325] border-l-4 border-l-[#c97d3a] border-y border-r border-y-[#2e2e30] border-r-[#2e2e30] rounded-r-xl p-6 md:p-8 shadow-sm">
+            <div className="bg-surface border-l-4 border-l-accent border-y border-r border-y-border border-r-border rounded-r-xl p-6 md:p-8 shadow-sm">
+
+                <div className="text-muted text-xs font-bold tracking-widest uppercase mb-3">
+                    Companion Project
+                </div>
 
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-4">
-                    <h2 className="text-xl md:text-2xl font-bold text-[#f0ebe6] tracking-tight">
-                        AetherRTC <span className="text-[#a09890] font-normal text-lg">— Companion Project</span>
+                    <h2 className="text-xl md:text-2xl font-bold text-primary-text tracking-tight">
+                        AetherRTC
                     </h2>
-                    <span className="font-mono text-xs bg-[#c97d3a]/10 text-[#c97d3a] border border-[#c97d3a]/20 px-3 py-1.5 rounded-full uppercase tracking-wider">
+                    <span className="font-mono text-xs bg-accent/10 text-accent border border-accent/20 px-3 py-1.5 rounded-full uppercase tracking-wider">
                         In Development
                     </span>
                 </div>
 
-                <p className="text-[#a09890] text-sm md:text-base leading-relaxed mb-6">
-                    AetherRTC is the WebRTC edge gateway that will connect live browser audio to this runtime. It terminates <span className="font-mono text-[#f0ebe6]">SDP</span> negotiation, <span className="font-mono text-[#f0ebe6]">ICE</span> traversal, and <span className="font-mono text-[#f0ebe6]">G.711</span> codec handling at the edge — so the orchestrator never touches WebRTC internals.
+                <p className="text-secondary-text text-sm md:text-base leading-relaxed mb-6">
+                    A standalone WebRTC edge gateway that terminates <span className="font-mono text-primary-text">SDP</span> negotiation, <span className="font-mono text-primary-text">ICE</span> traversal, <span className="font-mono text-primary-text">DTLS</span> handshakes, and <span className="font-mono text-primary-text">G.711</span> codec handling at the edge — so the Voice Agent Runtime never touches WebRTC internals. AetherRTC is the front door. VAR is the brain.
                 </p>
 
                 <div>
-                    <button
-                        disabled
-                        className="text-[#6b6b6e] font-medium text-sm flex items-center gap-2 cursor-not-allowed hover:text-[#a09890] transition-colors"
+                    <a
+                        href="https://github.com/Adityarya11/atherRTC"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary-text font-medium text-sm flex items-center gap-1.5 hover:text-accent transition-colors w-fit"
                     >
-                        GitHub Link (Coming Soon)
-                    </button>
+                        View on GitHub <ArrowUpRight size={16} />
+                    </a>
                 </div>
 
             </div>

@@ -5,37 +5,46 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 
-  /* Dark palette */
-  --color-dark-body: #1a1a1b;
-  --color-dark-surface: #232325;
-  --color-dark-hover: #3d2e1c;
-  --color-dark-border: #2e2e30;
-  --color-dark-muted: #6b6b6e;
+  /* Semantic Theme Tokens (Auto-generated utility classes) */
+  --color-body: var(--body-color);
+  --color-surface: var(--surface-color);
+  --color-hover: var(--hover-color);
+  --color-border: var(--border-color);
+  --color-muted: var(--muted-color);
+  --color-primary-text: var(--primary-text-color);
+  --color-secondary-text: var(--secondary-text-color);
 
-  /* Light palette */
-  --color-light-body: #fbf6f1;
-  --color-light-surface: #fbead8;
-  --color-light-border: #e8d5c0;
-  --color-light-muted: #a08060;
-
-  /* Accent — warm amber, works on both modes */
+  /* Accent & Status (Constant across modes) */
   --color-accent: #c97d3a;
   --color-accent-hover: #b06828;
-  --color-accent-muted: #3d2e1c;
-
-  /* Semantic text */
-  --color-text-primary-dark: #f0ebe6;
-  --color-text-secondary-dark: #a09890;
-  --color-text-primary-light: #1a1a1b;
-  --color-text-secondary-light: #5a4a3a;
-
-  /* Status colors */
   --color-complete: #4a9b6f;
   --color-in-progress: #c97d3a;
   --color-deferred: #6b6b6e;
 }
 
-/* Base */
+:root {
+  /* Dark Theme (Default) */
+  --body-color: #1a1a1b;
+  --surface-color: #232325;
+  --hover-color: #3d2e1c;
+  --border-color: #2e2e30;
+  --muted-color: #6b6b6e;
+  --primary-text-color: #f0ebe6;
+  --secondary-text-color: #a09890;
+}
+
+html.light-mode {
+  /* Light Theme Overrides */
+  --body-color: #fbf6f1;
+  --surface-color: #fbead8;
+  --hover-color: #e8d5c0; /* Hover state for light mode */
+  --border-color: #e8d5c0;
+  --muted-color: #a08060;
+  --primary-text-color: #1a1a1b;
+  --secondary-text-color: #5a4a3a;
+}
+
+/* Base DOM Elements */
 *,
 *::before,
 *::after {
@@ -47,38 +56,36 @@ html {
 }
 
 body {
-  background-color: #1a1a1b;
-  color: #f0ebe6;
+  background-color: var(--body-color);
+  color: var(--primary-text-color);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
-/* Selection */
 ::selection {
-  background-color: #3d2e1c;
-  color: #f0ebe6;
+  background-color: var(--hover-color);
+  color: var(--primary-text-color);
 }
 
-/* Scrollbar — subtle, on-brand */
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
 }
-
 ::-webkit-scrollbar-track {
-  background: #1a1a1b;
+  background: var(--body-color);
 }
-
 ::-webkit-scrollbar-thumb {
-  background: #3d2e1c;
+  background: var(--border-color);
   border-radius: 3px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
-  background: #c97d3a;
+  background: var(--accent);
 }
 
-/* Utility: hide scrollbar but keep scroll */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }

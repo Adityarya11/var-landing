@@ -9,14 +9,16 @@ import BlogSection from "@/components/BlogSection";
 import AetherRTCCallout from "@/components/AetherRTCCallout";
 import Waitlist from "@/components/Waitlist";
 import Footer from "@/components/Footer";
+import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Home() {
   return (
-    <main className="flex flex-col w-full">
+    <main className="flex flex-col w-full relative">
       <Hero />
       <StatCallout />
       <Architecture />
       <LatencyTable />
+      <ThemeToggle />
       <MilestoneTimeline />
       <HardwarePlacement />
       <TechStack />
