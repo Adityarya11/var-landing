@@ -1,26 +1,88 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  /* Typography */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Dark palette */
+  --color-dark-body: #1a1a1b;
+  --color-dark-surface: #232325;
+  --color-dark-hover: #3d2e1c;
+  --color-dark-border: #2e2e30;
+  --color-dark-muted: #6b6b6e;
+
+  /* Light palette */
+  --color-light-body: #fbf6f1;
+  --color-light-surface: #fbead8;
+  --color-light-border: #e8d5c0;
+  --color-light-muted: #a08060;
+
+  /* Accent — warm amber, works on both modes */
+  --color-accent: #c97d3a;
+  --color-accent-hover: #b06828;
+  --color-accent-muted: #3d2e1c;
+
+  /* Semantic text */
+  --color-text-primary-dark: #f0ebe6;
+  --color-text-secondary-dark: #a09890;
+  --color-text-primary-light: #1a1a1b;
+  --color-text-secondary-light: #5a4a3a;
+
+  /* Status colors */
+  --color-complete: #4a9b6f;
+  --color-in-progress: #c97d3a;
+  --color-deferred: #6b6b6e;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #1a1a1b;
+  color: #f0ebe6;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Selection */
+::selection {
+  background-color: #3d2e1c;
+  color: #f0ebe6;
+}
+
+/* Scrollbar — subtle, on-brand */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3d2e1c;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c97d3a;
+}
+
+/* Utility: hide scrollbar but keep scroll */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
