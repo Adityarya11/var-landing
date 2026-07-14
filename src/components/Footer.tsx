@@ -7,7 +7,7 @@ export default function Footer() {
 
                 <div className="flex items-center gap-6 text-sm font-medium text-[#a09890]">
                     <a
-                        href="https://github.com/adityarya11/var"
+                        href="https://github.com/adityarya11/voice-agent-runtime"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="hover:text-[#f0ebe6] transition-colors"
