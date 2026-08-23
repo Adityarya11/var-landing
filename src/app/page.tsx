@@ -1,4 +1,4 @@
-import Hero from "@/components/Hero"
+import Hero from "@/components/Hero";
 import StatCallout from "@/components/StatCallout";
 import Architecture from "@/components/Architecture";
 import LatencyTable from "@/components/LatencyTable";
@@ -10,6 +10,7 @@ import AetherRTCCallout from "@/components/AetherRTCCallout";
 import Waitlist from "@/components/Waitlist";
 import Footer from "@/components/Footer";
 import ThemeToggle from "@/components/ThemeToggle";
+import VideoSection from "@/components/VideoSection";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <LatencyTable />
       <ThemeToggle />
       <MilestoneTimeline />
+      <VideoSection />
       <HardwarePlacement />
       <TechStack />
       <BlogSection />
