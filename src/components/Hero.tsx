@@ -1,44 +1,41 @@
-import React from "react";
+import { REPO_URL, REPORT_URL } from "@/lib/links";
 
 export default function Hero() {
-    return (
-        <section className="relative flex flex-col items-center text-center pt-32 pb-20 px-6 overflow-hidden">
-
-            {/* Eyebrow label */}
-            <div className="font-mono text-xs md:text-sm text-accent tracking-widest uppercase mb-8 border border-accent/30 bg-accent/10 px-4 py-1.5 rounded-full">
-                Open Source · Consumer Hardware · No Cloud APIs
-            </div>
-
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-text tracking-tight max-w-4xl mb-6">
-                A distributed, real-time voice agent runtime.<br className="hidden md:block" /> Built from scratch on consumer hardware.
-            </h1>
-
-            <p className="text-lg md:text-xl text-secondary-text max-w-2xl mb-6 leading-relaxed">
-                Go orchestrator. Python inference engine. gRPC bidirectional stream.
-                Sub-<span className="font-mono text-primary-text">1.1s</span> end-to-end latency on an RTX <span className="font-mono">3050</span> Mobile.
-            </p>
-
-            {/* Directional note */}
-            <p className="text-sm text-muted max-w-lg mb-10 italic">
-                Capable of true bidirectional duplex, intelligent barge-in, and dynamic domain switching.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4">
-                <a
-                    href="https://github.com/adityarya11/voice-agent-runtime"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-6 py-3 bg-accent text-[#1a1a1b] rounded-lg hover:bg-accent-hover transition-colors font-medium flex items-center justify-center shadow-lg shadow-accent/20"
-                >
-                    View on GitHub
-                </a>
-                <a
-                    href="#waitlist"
-                    className="px-6 py-3 bg-surface text-primary-text border border-border rounded-lg hover:bg-hover transition-colors font-medium flex items-center justify-center"
-                >
-                    Join Waitlist
-                </a>
-            </div>
-        </section>
-    );
+  return (
+    <section className="w-full max-w-3xl mx-auto px-6 pt-28 pb-16">
+      <p className="font-mono text-sm text-accent-strong mb-6">Voice Agent Runtime</p>
+      <h1 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight mb-6">
+        A voice agent that runs entirely on a 4 GB laptop GPU.
+      </h1>
+      <p className="text-lg text-secondary-text leading-relaxed mb-10">
+        Speech in, speech out, with no cloud inference. The median reply starts{" "}
+        <span className="font-mono text-primary-text">2.07 s</span> after you stop
+        talking, measured at the client over 179 turns.
+      </p>
+      <div className="flex flex-wrap gap-3">
+        <a
+          href="#demo"
+          className="px-5 py-2.5 bg-primary-text text-body rounded-lg font-medium hover:opacity-85 transition-opacity"
+        >
+          Watch the demo
+        </a>
+        <a
+          href={REPO_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-5 py-2.5 border border-border bg-surface rounded-lg font-medium hover:border-accent transition-colors"
+        >
+          GitHub
+        </a>
+        <a
+          href={REPORT_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-5 py-2.5 border border-border bg-surface rounded-lg font-medium hover:border-accent transition-colors"
+        >
+          Benchmark report
+        </a>
+      </div>
+    </section>
+  );
 }
