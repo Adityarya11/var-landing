@@ -15,11 +15,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Voice Agent Runtime",
   description:
-    "A distributed, real-time voice agent runtime. Go orchestrator, Python inference engine, gRPC bidirectional stream. Sub-1.1s end-to-end latency on consumer hardware.",
+    "A voice agent that runs entirely on a 4 GB laptop GPU. 2.07 s median from end of speech to first audio, measured over 179 turns.",
   openGraph: {
     title: "Voice Agent Runtime",
     description:
-      "Distributed real-time voice agent runtime built on consumer hardware. No cloud APIs.",
+      "A voice agent that runs entirely on a 4 GB laptop GPU, with measured latency.",
     type: "website",
   },
 };
@@ -34,7 +34,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-body text-primary-text transition-colors duration-300">
+      <body className="min-h-full flex flex-col bg-body text-primary-text">
         {children}
       </body>
     </html>
